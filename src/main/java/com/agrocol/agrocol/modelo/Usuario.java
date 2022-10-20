@@ -1,5 +1,10 @@
 package com.agrocol.agrocol.modelo;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Table(name="USUARIOS")
 @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
@@ -24,7 +29,8 @@ public class Usuario implements Serializable {
     @NotEmpty(message = "Debe ingresar Documento")
     private String documento;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "estado_ID")
     private EnumEstado estado;
 
     @NotEmpty(message = "Debe ingresar Mail")
@@ -43,17 +49,25 @@ public class Usuario implements Serializable {
     @NotEmpty(message = "Debe ingresar Nombre de usuario")
     private String nombreUsuario;
 
-    @Column(name="TIPO_DOC")
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "tipo_doc_ID")
     private EnumTipoDoc tipoDoc;
 
     //bi-directional many-to-one association to Role
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="ID_ROL")
+    @ManyToOne
+    @JoinColumn(name = "rol_ID")
     private Rol rol;
 
     @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
-    private List<Formulario> formularios;
+    private List<Formulario> formularios = new java.util.ArrayList<>();
+
+    public List<Formulario> getFormularios() {
+        return formularios;
+    }
+
+    public void setFormularios(List<Formulario> formularios) {
+        this.formularios = formularios;
+    }
 
 
     public Usuario() {
@@ -162,14 +176,6 @@ public class Usuario implements Serializable {
 
     public void setInstituto(String instituto) {
         this.instituto = instituto;
-    }
-
-    public List<Formulario> getFormularios() {
-        return formularios;
-    }
-
-    public void setFormularios(List<Formulario> formularios) {
-        this.formularios = formularios;
     }
 
     @Override
