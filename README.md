@@ -8,13 +8,13 @@ de la Información impartida por UTEC Universidad Tecnológica del Uruguay.
 ```
 spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
-spring.datasource.url= ``jdbc:oracle:thin:@192.168.56.1:1521:xe``
-spring.datasource.username= ``AGROCOL``
-spring.datasource.password= ``AGROCOL``
-spring.jpa.hibernate.ddl-auto= ``update``
-spring.jpa.show-sql= ``true``
-spring.jpa.properties.hibernate.format_sql= ``true``
-spring.jpa.properties.hibernate.dialect= ``org.hibernate.dialect.Oracle10gDialect``
+spring.datasource.url=jdbc:oracle:thin:@192.168.56.1:1521:xe
+spring.datasource.username=AGROCOL
+spring.datasource.password=AGROCOL
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
 ```
 
 ## Dependencias a instalar
@@ -72,7 +72,13 @@ spring.jpa.properties.hibernate.dialect= ``org.hibernate.dialect.Oracle10gDialec
 
 ## Herramientas a descargar
 
-### Backend
+### IDE
+<a href="https://www.jetbrains.com/es-es/idea/"> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" 
+alt="Maven" width="40" height="40"/> 
+</a>
+
+### Backend     
 <div style="display: inline_block">
 <a href="https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html/"> 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" 
@@ -107,11 +113,7 @@ alt="logo Bootstrap" width="40" height="40"/>
 </div>
 
 
-## IDE
-<a href="https://www.jetbrains.com/es-es/idea/"> 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" 
-alt="Maven" width="40" height="40"/> 
-</a>
+
 
                     
 ## Tech Stack
